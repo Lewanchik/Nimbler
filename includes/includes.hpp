@@ -7,7 +7,7 @@
 
 #include <string>
 
-struct Coordinates
+struct s_coordinates
 {
     int x;
     int y;
@@ -17,7 +17,6 @@ enum Type
 {
     headSnake,
     bodySnake,
-    tailSnake,
     food,
     bonusFood,
     obstacle
