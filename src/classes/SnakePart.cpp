@@ -3,6 +3,8 @@
 //
 
 #include "SnakePart.hpp"
+#include <random>
+
 
 int SnakePart::getType() const
 {
@@ -31,3 +33,10 @@ SnakePart::SnakePart(std::string *avatar, s_coordinates coordinates) :
     _type = Type::bodySnake;
 }
 
+SnakePart::SnakePart(std::string *avatar) :
+	_avatar(avatar),
+	_type(Type::bodySnake)
+{
+	s_coordinates position{255,255}; //TODO: Изменить установку координат на центр экрана
+	this->_possition = position;
+}

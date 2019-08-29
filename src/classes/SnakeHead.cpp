@@ -45,3 +45,9 @@ void SnakeHead::setDirection(unsigned short direction)
 {
     _direction = direction;
 }
+
+SnakeHead::SnakeHead(std::string *avatar) :
+	SnakePart(avatar)
+{
+
+}
