@@ -5,7 +5,7 @@
 #ifndef IENTITY_HPP
 #define IENTITY_HPP
 
-#include "includes/includes.hpp"
+#include "../../includes/includes.hpp"
 
 class IEntity
 {

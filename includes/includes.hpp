@@ -1,11 +1,9 @@
-//
-// Created by lewan on 26.08.19.
-//
 
 #ifndef NIMBLERGIT_INCLUDES_HPP
 #define NIMBLERGIT_INCLUDES_HPP
 
 #include <string>
+#include "../src/classes/SnakePart.hpp"
 
 struct s_coordinates
 {
@@ -24,7 +22,10 @@ enum Type
 
 enum Direction
 {
-
+    right,
+    down,
+    left,
+    up
 };
 
-#endif //NIMBLERGIT_INCLUDES_HPP
+#endif

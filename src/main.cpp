@@ -1,13 +1,15 @@
-//
-// Created by lewan on 26.08.19.
-//
 
 #include <string>
 #include <iostream>
-#include "classes/SnakePart.hpp"
-#include "../includes/includes.hpp"
+#include <list>
 
 int main()
 {
-   std::cout << sizeof (Type);
+    std::list<int> tmp = {1, 2, 3, 4, 5};
+
+    for (auto i = tmp.begin(); i != tmp.end(); i = std::next(i, 1))
+    {
+        if (std::next(i, 1) != tmp.end())
+            std::cout << *std::next(i, 1) << std::endl;
+    }
 }
