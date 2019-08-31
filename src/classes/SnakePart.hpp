@@ -17,8 +17,6 @@ public:
     void            setCoordinates(s_coordinates possition);
 
 protected:
-	explicit SnakePart(std::string *avatar);
-protected:
     std::string     *_avatar;
     s_coordinates   _possition;
     int             _type;
