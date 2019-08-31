@@ -23,7 +23,7 @@ int		main()
 
 //    std::list<int> tmp = {1, 2, 3, 4, 5};
 
-//
+//   s
 //	std::cout << "<tail(x:" << snake.getBody().begin()->getPosition().x << ", y:" <<
 //			snake.getBody().begin()->getPosition().y << ")";
 //    for (auto i = snake.getBody().begin(); i != snake.getBody().end(); i = std::next(i, 1))
