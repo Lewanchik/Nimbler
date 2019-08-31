@@ -5,7 +5,6 @@
 #ifndef NIMBLER_SNAKEPART_HPP
 #define NIMBLER_SNAKEPART_HPP
 
-
 #include "IEntity.hpp"
 
 
