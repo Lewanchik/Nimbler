@@ -2,20 +2,24 @@
 #include <string>
 #include <iostream>
 #include <list>
-#include "classes/SnakeHead.hpp"
-#include "classes/Snake.hpp"
 #include "classes/SingleGame.hpp"
 
-
-int main()
+template <unsigned short Twidth, unsigned short Theight>
+void	setSnakeOnField(SingleGame<Twidth, Theight> &singleGame)
 {
-	Field<5, 5> field;
-	SnakeHead *snakeHead = new SnakeHead(new std::string("Head avatar path"));
-//	Snake *snake = new Snake(snakeHead);
-	IEntity *iEntity = dynamic_cast<IEntity *>(snakeHead);
+	Field<Twidth, Theight> &field = singleGame.getField();
+	field[singleGame.getSnake().getHead().getPosition().y][singleGame.getSnake().getHead().getPosition().x] = singleGame.getSnake().getHead();
+}
 
-	field[1][2] = iEntity;
-	std::cout << field[1][2]->getAvatar();
+int		main()
+{
+	const unsigned short WIDTH = 10;
+	const unsigned short HEIGHT = 10;
+	SingleGame<WIDTH, HEIGHT> singleGame;
+
+
+
+
 
 //    std::list<int> tmp = {1, 2, 3, 4, 5};
 

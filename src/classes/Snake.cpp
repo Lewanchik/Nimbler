@@ -6,13 +6,13 @@ Snake::Snake(SnakeHead head) : _head(std::move(head))
 	s_coordinates position = head.getPosition();
 
 	position.x--;
-    _body.push_front(SnakePart(new std::string("path1"), position));
+    _body.push_front(SnakePart(new std::string("P"), position));
     position = _body.begin()->getPosition();
     position.x--;
-    _body.push_front(SnakePart(new std::string("path2"), position));
+    _body.push_front(SnakePart(new std::string("P"), position));
 	position = _body.begin()->getPosition();
 	position.x--;
-	_body.push_front(SnakePart(new std::string("path3"), position));
+	_body.push_front(SnakePart(new std::string("P"), position));
 
 }
 

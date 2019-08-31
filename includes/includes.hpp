@@ -3,9 +3,6 @@
 #define NIMBLERGIT_INCLUDES_HPP
 
 #include <string>
-#include <vector>
-#include "../src/classes/IEntity.hpp"
-
 
 struct s_coordinates
 {
