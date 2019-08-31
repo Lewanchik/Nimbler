@@ -11,9 +11,9 @@ class IEntity
 {
 public:
     virtual int             getType() const = 0;      // type of entity (bodySnake, obstacle etc.)
-    virtual s_coordinates   getPossition() const = 0; // x and y coordinates
+    virtual s_coordinates   getPosition() const = 0; // x and y coordinates
     virtual std::string     getAvatar() const = 0;    //path to avatar
-    virtual void            setCoordinates(s_coordinates possition) = 0;
+    virtual void            setCoordinates(s_coordinates position) = 0;
 };
 
 #endif //NIMBLERGIT_IENTITY_HPP

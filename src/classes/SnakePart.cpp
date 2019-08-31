@@ -11,9 +11,9 @@ int SnakePart::getType() const
     return _type;
 }
 
-s_coordinates SnakePart::getPossition() const
+s_coordinates SnakePart::getPosition() const
 {
-    return _possition;
+    return _position;
 }
 
 std::string SnakePart::getAvatar() const
@@ -21,14 +21,14 @@ std::string SnakePart::getAvatar() const
     return *_avatar;
 }
 
-void SnakePart::setCoordinates(s_coordinates possition)
+void SnakePart::setCoordinates(s_coordinates position)
 {
-    _possition = possition;
+    _position = position;
 }
 
 SnakePart::SnakePart(std::string *avatar, s_coordinates coordinates) :
     _avatar(avatar),
-    _possition(coordinates)
+    _position(coordinates)
 {
     _type = Type::bodySnake;
 }
@@ -38,5 +38,5 @@ SnakePart::SnakePart(std::string *avatar) :
 	_type(Type::bodySnake)
 {
 	s_coordinates position{255,255}; //TODO: Изменить установку координат на центр экрана
-	this->_possition = position;
+	this->_position = position;
 }

@@ -8,24 +8,40 @@
 #include "Snake.hpp"
 #include "../../includes/includes.hpp"
 
+template <unsigned short width, unsigned short height>
 class SingleGame
 {
 public:
-	int getScore() const;
+	int getScore() const
+	{
+		return _score;
+	}
 
-	int getGameSpeed() const;
+	int getGameSpeed() const
+	{
+		return _gameSpeed;
+	}
 
-	Snake *getSnake() const;
+	Snake *getSnake() const
+	{
+		return _snake;
+	}
 
-	const s_field &getField() const;
+	void addScore(int score)
+	{
+		return _snake;
+	}
 
-	void addScore(int score);
+	const Field<width, height> &getField() const
+	{
+		return _field;
+	}
 
 private:
-	int		_score;
-	int		_gameSpeed;
-	Snake	*_snake;
-	s_field	_field;
+	int						_score;
+	int						_gameSpeed;
+	Snake					*_snake;
+	Field<width, height>	_field;
 };
 
 

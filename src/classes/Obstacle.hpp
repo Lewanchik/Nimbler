@@ -13,13 +13,13 @@ class Obstacle : public IEntity
 public:
 	Obstacle(std::string *avatar, const s_coordinates &position);
 
-	int getType() const override;
+	int getType() const override ;
 
-	s_coordinates getPossition() const override;
+	s_coordinates getPosition() const override;
 
 	std::string getAvatar() const override;
 
-	void setCoordinates(s_coordinates possition) override;
+	void setCoordinates(s_coordinates position) override;
 
 private:
 	std::string		*_avatar;

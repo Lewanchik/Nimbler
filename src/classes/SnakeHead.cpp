@@ -16,14 +16,14 @@ int SnakeHead::getType() const
     return _type;
 }
 
-unsigned short SnakeHead::getDirrection()
+unsigned short SnakeHead::getDirection()
 {
     return _direction;
 }
 
-s_coordinates SnakeHead::getPossition() const
+s_coordinates SnakeHead::getPosition() const
 {
-    return _possition;
+    return _position;
 }
 
 bool SnakeHead::isFoodInside()
@@ -36,9 +36,9 @@ std::string SnakeHead::getAvatar() const
     return *_avatar;
 }
 
-void SnakeHead::setCoordinates(s_coordinates possition)
+void SnakeHead::setCoordinates(s_coordinates position)
 {
-    _possition = possition;
+    _position = position;
 }
 
 void SnakeHead::setDirection(unsigned short direction)
