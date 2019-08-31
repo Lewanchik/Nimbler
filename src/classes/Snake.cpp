@@ -7,10 +7,8 @@ Snake::Snake(SnakeHead head) : _head(std::move(head))
 
 	position.x--;
     _body.push_front(SnakePart(new std::string("P"), position));
-    position = _body.begin()->getPosition();
     position.x--;
     _body.push_front(SnakePart(new std::string("P"), position));
-	position = _body.begin()->getPosition();
 	position.x--;
 	_body.push_front(SnakePart(new std::string("P"), position));
 

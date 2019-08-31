@@ -19,10 +19,6 @@ public:
     void            setDirection(unsigned short direction);
     bool            isFoodInside();
 
-protected:
-    std::string     *_avatar;
-    s_coordinates   _possition;
-    int             _type;
 private:
     bool            _foodInside;
     unsigned short  _direction;

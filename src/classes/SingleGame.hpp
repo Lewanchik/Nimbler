@@ -17,7 +17,7 @@ public:
 	{
 		_score = 0;
 		_gameSpeed = 1;
-		_snake = Snake(SnakeHead(new std::string("H")));
+		_snake = new Snake(SnakeHead(new std::string("H"), s_coordinates{5, 5}));
 	}
 
 	int getScore() const
@@ -32,7 +32,7 @@ public:
 
 	Snake &getSnake() const
 	{
-		return _snake;
+		return *_snake;
 	}
 
 	void addScore(int score)
@@ -48,7 +48,7 @@ public:
 private:
 	int						_score;
 	int						_gameSpeed;
-	Snake					_snake;
+	Snake					*_snake;
 	Field<width, height>	_field;
 };
 
