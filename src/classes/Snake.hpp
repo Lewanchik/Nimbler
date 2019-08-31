@@ -11,12 +11,10 @@
 
 class Snake {
 public:
-    explicit Snake(SnakeHead head);
-    std::forward_list<SnakePart>    &getBody();
-    SnakeHead                       &getHead();
+    Snake();
+    std::forward_list<SnakePart>    getBody();
     void                            addBodyPart();
     void                            moveSnake();
-
 
 private:
     SnakeHead                           _head;
