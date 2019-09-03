@@ -24,6 +24,8 @@ void Snake::moveSnake()
 
         if (next != _body.end())
             (*i).setCoordinates((*next).getPosition());
+        else
+            (*i).setCoordinates(_head.getPosition());
     }
 }
 

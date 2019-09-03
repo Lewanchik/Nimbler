@@ -13,11 +13,11 @@ public:
     explicit Food(std::string *avatar, unsigned score);
     explicit Food(std::string *avatar, unsigned score, s_coordinates possition);
     int             getType() const override;      // type of entity (bodySnake, obstacle etc.)
-    s_coordinates   getPossition() const override; // x and y coordinates
+    s_coordinates   getPosition() const override ; // x and y coordinates
     std::string     getAvatar() const override;    //path to avatar
     void            setCoordinates(s_coordinates possition) override;
 
-    unsigned        getScore() const;
+    virtual unsigned        getScore() const;
 
 protected:
     int             _type;

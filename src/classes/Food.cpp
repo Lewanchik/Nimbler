@@ -27,9 +27,9 @@ std::string Food::getAvatar() const
     return *_avatar;
 }
 
-s_coordinates Food::getPossition() const
+s_coordinates Food::getPosition() const
 {
-    return  _possition;
+    return _possition;
 }
 
 unsigned Food::getScore() const
