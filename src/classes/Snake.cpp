@@ -1,16 +1,15 @@
 
 #include "Snake.hpp"
 
-Snake::Snake(SnakeHead head) : _head(std::move(head))
+Snake::Snake(std::string *bodyAvatar, SnakeHead head) : _head(std::move(head))
 {
 	s_coordinates position = head.getPosition();
 
-	position.x--;
-    _body.push_front(SnakePart(new std::string("P"), position));
-    position.x--;
-    _body.push_front(SnakePart(new std::string("P"), position));
-	position.x--;
-	_body.push_front(SnakePart(new std::string("P"), position));
+	for (int i = 0; i < START_NUMBER_SNAKE_BODY_PARTS; i++)
+	{
+		position.x--;
+		_body.push_front(SnakePart(bodyAvatar, position));
+	}
 
 }
 

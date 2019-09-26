@@ -27,7 +27,7 @@ public:
 	}
 
 private:
-	IEntity	*field[width][height];
+	IEntity	*field[height][width];
 };
 
 #endif //NIMBLER_FIELD_HPP

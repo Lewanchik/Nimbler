@@ -11,7 +11,7 @@
 
 class Snake {
 public:
-    explicit Snake(SnakeHead head);
+    explicit Snake(std::string *bodyAvatar, SnakeHead head);
     std::forward_list<SnakePart>    &getBody();
     SnakeHead                       &getHead();
     void                            addBodyPart();

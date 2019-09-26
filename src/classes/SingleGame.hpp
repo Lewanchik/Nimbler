@@ -7,6 +7,7 @@
 
 #include "Snake.hpp"
 #include "Field.hpp"
+#include "BonusFood.hpp"
 #include "../../includes/includes.hpp"
 
 template <unsigned short width, unsigned short height>
@@ -17,7 +18,16 @@ public:
 	{
 		_score = 0;
 		_gameSpeed = 1;
-		_snake = new Snake(SnakeHead(new std::string("H"), s_coordinates{5, 5}));
+		_snake = new Snake(
+				new std::string("B"),
+				SnakeHead(
+						new std::string("H"),
+						s_coordinates{width / 2, height / 2}
+						)
+				);
+		_bonusFood = new BonusFood(new std::string("#"), 10, {-1,-1}, 5);
+		_food = new Food(new std::string("*"), 10, {-1,-1});
+
 	}
 
 	int getScore() const
@@ -45,11 +55,23 @@ public:
 		return _field;
 	}
 
+	BonusFood &getBonusFood() const
+	{
+		return *_bonusFood;
+	}
+
+	Food &getFood() const
+	{
+		return *_food;
+	}
+
 private:
 	int						_score;
 	int						_gameSpeed;
 	Snake					*_snake;
 	Field<width, height>	_field;
+	BonusFood				*_bonusFood;
+	Food					*_food;
 };
 
 

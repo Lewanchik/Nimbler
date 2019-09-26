@@ -10,13 +10,13 @@
 
 class BonusFood : public Food {
 public:
-    explicit BonusFood(std::string *avatar, unsigned score, int timeToDestoy);
-    explicit BonusFood(std::string *avatar, unsigned score, s_coordinates possition, int timeToDestoy);
+    explicit BonusFood(std::string *avatar, unsigned score, int timeToDestroy);
+    explicit BonusFood(std::string *avatar, unsigned score, s_coordinates position, int timeToDestroy);
 
     int             getType() const override;      // type of entity (bodySnake, obstacle etc.)
     s_coordinates   getPosition() const override; // x and y coordinates
     std::string     getAvatar() const override;    //path to avatar
-    void            setCoordinates(s_coordinates possition) override ;
+    void            setCoordinates(s_coordinates position) override ;
 
     unsigned        getScore() const ;
     int             getTimeToDestroy() const;

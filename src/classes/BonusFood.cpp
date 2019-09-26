@@ -29,9 +29,9 @@ int BonusFood::getType() const
     return _type;
 }
 
-void BonusFood::setCoordinates(s_coordinates possition)
+void BonusFood::setCoordinates(s_coordinates position)
 {
-    _possition = possition;
+    _possition = position;
 }
 
 BonusFood::BonusFood(std::string *avatar, unsigned score, int timeToDestroy) : Food(avatar, score)
@@ -40,7 +40,7 @@ BonusFood::BonusFood(std::string *avatar, unsigned score, int timeToDestroy) : F
 }
 
 BonusFood::BonusFood(std::string *avatar, unsigned score,
-                     s_coordinates possition, int timeToDestoy) : Food(avatar, score, possition)
+					 s_coordinates position, int timeToDestroy) : Food(avatar, score, position)
 {
-    _timeToDestroy = timeToDestoy;
+    _timeToDestroy = timeToDestroy;
 }
