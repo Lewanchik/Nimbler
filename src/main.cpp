@@ -1,9 +1,6 @@
 #include "../includes/includes.hpp"
 #include "../includes/fieldActions.hpp"
-#include "classes/IEntity.hpp"
-#include "classes/Food.hpp"
 
-#include "../includes/collision.hpp"
 
 int		main()
 {
@@ -11,23 +8,40 @@ int		main()
 	const unsigned short HEIGHT = 10;
 	SingleGame<WIDTH, HEIGHT> singleGame;
 	s_coordinates head_pos = singleGame.getSnake().getHead().getPosition();
-	s_coordinates food_pos = {1, 1};
-	std::string *avatar = new std::string("avatar");
+	char direction;
 
-	Food food(avatar, 10, food_pos);
-	IEntity *kek = &food;
+	zeroingField(singleGame);
+	singleGame.setFreeCells(countFreeCells<WIDTH, HEIGHT>(singleGame.getField()));
 
+	while (true)
+	{
+		newFrame<WIDTH, HEIGHT>(singleGame);
+		printMapInTerm<WIDTH, HEIGHT>(singleGame);
+		std::cout << std::endl;
+		std::cin >> direction;
+		switch (direction)
+		{
+			case 'w':
+				if (singleGame.getSnake().getHead().getDirection() != down)
+					singleGame.getSnake().getHead().setDirection(up);
+				break;
+			case 's':
+				if (singleGame.getSnake().getHead().getDirection() != up)
+					singleGame.getSnake().getHead().setDirection(down);
+				break;
+			case 'a':
+				if (singleGame.getSnake().getHead().getDirection() != right)
+					singleGame.getSnake().getHead().setDirection(left);
+				break;
+			case 'd':
+				if (singleGame.getSnake().getHead().getDirection() != left)
+					singleGame.getSnake().getHead().setDirection(right);
+				break;
+			case 'e':
+				break;
+		}
+	}
 
-//	zeroingField(singleGame);
-//	singleGame.getField()[singleGame.getFood().getPosition().y]
-//	[singleGame.getFood().getPosition().x] =
-//			&singleGame.getFood();
-//	setSnakeOnField<WIDTH, HEIGHT>(singleGame);
-//	printMapInTerm<WIDTH, HEIGHT>(singleGame);
-//	std::cout << std::endl;
-
-
-	std::cout <<  dynamic_cast<Food *>(kek)->getScore() << std::endl;
 //
 //	singleGame.getSnake().addBodyPart();
 //	singleGame.getSnake().moveSnake();

@@ -20,9 +20,14 @@ public:
 
     unsigned        getScore() const ;
     int             getTimeToDestroy() const;
+    void 			setDyingFrame(int dyingFrame);
+
+
+	int getDyingFrame() const;
 
 private:
     int _timeToDestroy;
+    int _dyingFrame;
 };
 
 

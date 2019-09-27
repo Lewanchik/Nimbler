@@ -18,7 +18,8 @@ public:
     unsigned short  getDirection();
     void            setDirection(unsigned short direction);
     bool            isFoodInside();
-
+    void			move();
+    void 			setFoodInside(bool information);
 private:
     bool            _foodInside;
     unsigned short  _direction;

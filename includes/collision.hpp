@@ -16,23 +16,32 @@ void	collision(SingleGame<Twidth, Theight> &singleGame)
     {
         case (right):
             head_coord.x++;
+			break;
         case (down):
             head_coord.y++;
+			break;
         case (left):
             head_coord.x--;
+			break;
         case (up):
             head_coord.y--;
+			break;
         default:
             ;
     }
     if (singleGame.getField()[head_coord.y][head_coord.x] != nullptr &&
-        (singleGame.getField()[head_coord.y][head_coord.x]->getType() == food ||
-         singleGame.getField()[head_coord.y][head_coord.x]->getType()) == bonusFood)
+			(singleGame.getField()[head_coord.y][head_coord.x]->getType() == food ||
+			 singleGame.getField()[head_coord.y][head_coord.x]->getType() == bonusFood))
     {
         singleGame.addScore(dynamic_cast<Food *>(singleGame.getField()[head_coord.y][head_coord.x])->getScore());
+        singleGame.getSnake().getHead().setFoodInside(true);
+        singleGame.getSnake().addBodyPart();
+		singleGame.getField()[head_coord.y][head_coord.x]->setCoordinates({-1, -1});
         singleGame.getField()[head_coord.y][head_coord.x] = nullptr;
     }
-    else
+    else if (singleGame.getField()[head_coord.y][head_coord.x] != nullptr &&
+    (singleGame.getField()[head_coord.y][head_coord.x]->getType() == obstacle ||
+    singleGame.getField()[head_coord.y][head_coord.x]->getType() == bodySnake))
     {
         std::cout << "GAMEOVER" << std::endl;
         exit(0);//GAMEOVER

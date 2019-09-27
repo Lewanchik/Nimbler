@@ -45,3 +45,27 @@ void SnakeHead::setDirection(unsigned short direction)
 {
     _direction = direction;
 }
+
+void SnakeHead::move()
+{
+	switch (this->_direction)
+	{
+		case up:
+			this->_position.y--;
+			break;
+		case down:
+			this->_position.y++;
+			break;
+		case left:
+			this->_position.x--;
+			break;
+		case right:
+			this->_position.x++;
+			break;
+	}
+}
+
+void SnakeHead::setFoodInside(bool information)
+{
+	this->_foodInside = information;
+}
